@@ -1,0 +1,556 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sharp Scan Online Tasks</title>
+<style>
+:root {
+  --navy:#101d3a;
+  --blue:#2463eb;
+  --light:#f3f6fc;
+  --green:#12a875;
+  --text:#26344d;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;font-family:Arial,sans-serif;
+  background:var(--light);color:var(--text)
+}
+header{
+  background:var(--navy);color:white;padding:18px 7%;
+  display:flex;justify-content:space-between;align-items:center;
+  flex-wrap:wrap;gap:15px
+}
+.logo{font-size:23px;font-weight:bold}
+.logo span{color:#55c5ff}
+nav{display:flex;gap:10px;flex-wrap:wrap}
+button{
+  border:0;border-radius:7px;padding:11px 17px;
+  cursor:pointer;font-weight:bold
+}
+nav button{background:transparent;color:white}
+nav button:hover{background:#263b65}
+.primary{background:var(--blue);color:white}
+.success{background:var(--green);color:white}
+.danger{background:#dc3545;color:white}
+.hero{
+  background:linear-gradient(120deg,#101d3a,#2456a6);
+  color:white;text-align:center;padding:75px 20px
+}
+.hero h1{font-size:42px;margin:0 0 15px}
+.hero p{font-size:18px;line-height:1.7}
+.container{max-width:1100px;margin:auto;padding:35px 20px}
+.section-title{text-align:center;margin-bottom:25px}
+.grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px
+}
+.card{
+  background:white;padding:23px;border-radius:12px;
+  box-shadow:0 4px 16px #14284a12
+}
+.card h3{margin-top:5px;color:var(--navy)}
+.icon{font-size:35px}
+.price{
+  background:#e9f3ff;border-radius:12px;
+  padding:25px;text-align:center;margin:25px 0
+}
+.price h2{color:var(--blue);font-size:38px;margin:8px}
+input,select,textarea{
+  width:100%;padding:12px;margin:8px 0 15px;
+  border:1px solid #d5dce8;border-radius:7px;
+  font-size:15px
+}
+label{font-weight:bold;font-size:14px}
+.panel{
+  background:white;padding:25px;border-radius:12px;
+  margin:20px auto;max-width:750px;
+  box-shadow:0 4px 16px #14284a12
+}
+.hidden{display:none!important}
+.notice{
+  background:#fff5d9;padding:14px;border-radius:8px;
+  border-left:4px solid #e7a500;margin:15px 0;
+  line-height:1.6
+}
+.success-note{
+  background:#e6f8f0;padding:14px;border-radius:8px;
+  margin:15px 0
+}
+.task{
+  border:1px solid #e4e9f1;border-radius:9px;
+  padding:16px;margin:12px 0
+}
+.task button{margin-top:8px}
+table{width:100%;border-collapse:collapse;background:white}
+th,td{padding:12px;text-align:left;border-bottom:1px solid #e5e9f0}
+footer{
+  background:var(--navy);color:white;text-align:center;
+  padding:28px;margin-top:40px
+}
+.small{font-size:13px;color:#68758b}
+a{color:var(--blue)}
+@media(max-width:600px){
+ .hero h1{font-size:30px}
+ header{justify-content:center}
+ table{font-size:12px}
+ th,td{padding:7px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">SHARP <span>SCAN</span></div>
+  <nav>
+    <button onclick="showPage('home')">Home</button>
+    <button onclick="showPage('tasks')">Tasks</button>
+    <button onclick="showPage('register')">Register</button>
+    <button onclick="showPage('login')">Login</button>
+    <button onclick="showPage('adminLogin')">Admin</button>
+  </nav>
+</header>
+
+<!-- HOME -->
+<section id="home">
+  <div class="hero">
+    <h1>SHARP SCAN ONLINE TASKS</h1>
+    <p>Work Smart. Learn New Skills. Earn Through Online Tasks.</p>
+    <p>Explore opportunities in AI Training, Academic Writing,
+    Transcription and Data Entry.</p>
+    <button class="success" onclick="showPage('register')">
+      GET STARTED
+    </button>
+  </div>
+
+  <div class="container">
+    <h2 class="section-title">Our Online Task Categories</h2>
+    <div class="grid">
+      <div class="card">
+        <div class="icon">🤖</div>
+        <h3>AI Training</h3>
+        <p>Assist with data labelling, AI evaluation and content review.</p>
+      </div>
+      <div class="card">
+        <div class="icon">📝</div>
+        <h3>Academic Writing</h3>
+        <p>Research assistance, proofreading, editing and formatting.</p>
+      </div>
+      <div class="card">
+        <div class="icon">🎧</div>
+        <h3>Transcription</h3>
+        <p>Convert audio recordings into accurate written documents.</p>
+      </div>
+      <div class="card">
+        <div class="icon">💻</div>
+        <h3>Data Entry</h3>
+        <p>Typing, data processing and information organization.</p>
+      </div>
+    </div>
+
+    <div class="price">
+      <h3>ACCOUNT ACTIVATION FEE</h3>
+      <h2>KSh 175</h2>
+      <p>One-time registration activation fee.</p>
+      <button class="primary" onclick="showPage('register')">
+        CREATE YOUR ACCOUNT
+      </button>
+    </div>
+
+    <div class="card">
+      <h2>Why Choose Sharp Scan?</h2>
+      <p>✓ Four different online task categories</p>
+      <p>✓ Personal user dashboard</p>
+      <p>✓ Simple account registration</p>
+      <p>✓ Task progress tracking</p>
+      <p>✓ Account activation review</p>
+      <p>✓ Customer support</p>
+    </div>
+  </div>
+</section>
+
+<!-- TASKS -->
+<section id="tasks" class="hidden">
+ <div class="container">
+  <h2 class="section-title">Available Task Categories</h2>
+  <div class="grid">
+   <div class="card">
+    <div class="icon">🤖</div><h3>AI Training</h3>
+    <p>Help improve artificial intelligence through data annotation,
+    text classification and evaluation.</p>
+   </div>
+   <div class="card">
+    <div class="icon">📚</div><h3>Academic Writing</h3>
+    <p>Proofreading, formatting, research support and editing.</p>
+   </div>
+   <div class="card">
+    <div class="icon">🎙️</div><h3>Transcription</h3>
+    <p>Listen to audio and accurately type spoken words.</p>
+   </div>
+   <div class="card">
+    <div class="icon">📊</div><h3>Data Entry</h3>
+    <p>Organize information, enter records and update spreadsheets.</p>
+   </div>
+  </div>
+  <div class="notice">
+    <b>Important:</b> Task availability, eligibility and payment
+    depend on actual assignments and completed work. No income
+    or task availability is guaranteed.
+  </div>
+ </div>
+</section>
+
+<!-- REGISTER -->
+<section id="register" class="hidden">
+ <div class="panel">
+  <h2>Create Your Sharp Scan Account</h2>
+  <form id="registerForm">
+   <label>Full Name</label>
+   <input id="regName" required placeholder="Enter your full name">
+
+   <label>National ID Number</label>
+   <input id="regId" required placeholder="Enter your ID number">
+
+   <label>Phone Number</label>
+   <input id="regPhone" required placeholder="07XXXXXXXX">
+
+   <label>Email Address</label>
+   <input id="regEmail" type="email" required placeholder="Email address">
+
+   <label>Create Password</label>
+   <input id="regPassword" type="password" minlength="8"
+    required placeholder="At least 8 characters">
+
+   <label>Confirm Password</label>
+   <input id="regConfirm" type="password" required
+    placeholder="Confirm your password">
+
+   <label>Choose Task Category</label>
+   <select id="regCategory">
+    <option>AI Training</option>
+    <option>Academic Writing</option>
+    <option>Transcription</option>
+    <option>Data Entry</option>
+   </select>
+
+   <button class="primary" type="submit">CREATE ACCOUNT</button>
+  </form>
+  <p class="small">Already registered?
+   <a href="#" onclick="showPage('login')">Login here</a>
+  </p>
+ </div>
+</section>
+
+<!-- ACTIVATION -->
+<section id="activation" class="hidden">
+ <div class="panel">
+  <h2>Account Activation</h2>
+  <div class="price">
+   <p>Required activation fee</p>
+   <h2>KSh 175</h2>
+  </div>
+  <div class="notice">
+   <b>Payment instructions</b><br>
+   Payment method: M-PESA<br>
+   Send amount: <b>KSh 175</b><br>
+   Recipient phone number: <b>0748559320</b><br><br>
+   Confirm the recipient's registered name and authorization
+   before sending money. Keep your M-PESA receipt.
+  </div>
+  <p>After payment, enter the transaction code below for manual
+   verification by the administrator.</p>
+  <form id="paymentForm">
+   <label>M-PESA Transaction Code</label>
+   <input id="paymentCode" required placeholder="Enter transaction code">
+   <button class="primary" type="submit">SUBMIT FOR VERIFICATION</button>
+  </form>
+  <p class="small">Never share your M-PESA PIN or OTP.</p>
+ </div>
+</section>
+
+<!-- LOGIN -->
+<section id="login" class="hidden">
+ <div class="panel">
+  <h2>User Login</h2>
+  <form id="loginForm">
+   <label>National ID Number / Username</label>
+   <input id="loginId" required>
+   <label>Password</label>
+   <input id="loginPassword" type="password" required>
+   <button class="primary" type="submit">LOGIN</button>
+  </form>
+  <p class="small">New user?
+   <a href="#" onclick="showPage('register')">Register here</a>
+  </p>
+ </div>
+</section>
+
+<!-- USER DASHBOARD -->
+<section id="dashboard" class="hidden">
+ <div class="container">
+  <h2>Welcome, <span id="welcomeName"></span></h2>
+  <div class="grid">
+   <div class="card">
+    <h3>Account Status</h3>
+    <h2 id="accountStatus">Pending</h2>
+   </div>
+   <div class="card">
+    <h3>Selected Category</h3>
+    <p id="userCategory"></p>
+   </div>
+   <div class="card">
+    <h3>Payment Status</h3>
+    <p id="userPayment"></p>
+   </div>
+  </div>
+
+  <div class="card">
+   <h2>Your Task Dashboard</h2>
+   <p>Available task categories:</p>
+   <div class="task"><b>AI Training</b><p>AI data labelling and evaluation.</p></div>
+   <div class="task"><b>Academic Writing</b><p>Editing and proofreading assignments.</p></div>
+   <div class="task"><b>Transcription</b><p>Audio-to-text work.</p></div>
+   <div class="task"><b>Data Entry</b><p>Data organization and typing.</p></div>
+   <p id="taskMessage" class="notice">
+    Your account must be activated before accessing eligible tasks.
+   </p>
+   <button class="primary" onclick="showPage('activation')">
+    PAYMENT / ACTIVATION
+   </button>
+   <button class="danger" onclick="logout()">LOG OUT</button>
+  </div>
+ </div>
+</section>
+
+<!-- ADMIN LOGIN -->
+<section id="adminLogin" class="hidden">
+ <div class="panel">
+  <h2>Administrator Login</h2>
+  <form id="adminForm">
+   <label>Admin Username</label>
+   <input id="adminUser" required>
+   <label>Admin Password</label>
+   <input id="adminPass" type="password" required>
+   <button class="primary" type="submit">ADMIN LOGIN</button>
+  </form>
+  <p class="small">Demo credentials: admin / SharpScan175!</p>
+  <div class="notice">
+   Demo credentials are publicly visible in this prototype.
+   Replace this login with secure server-side authentication
+   before publishing.
+  </div>
+ </div>
+</section>
+
+<!-- ADMIN DASHBOARD -->
+<section id="adminDashboard" class="hidden">
+ <div class="container">
+  <h2>Administrator Dashboard</h2>
+  <div class="grid">
+   <div class="card"><h3>Total Users</h3><h2 id="totalUsers">0</h2></div>
+   <div class="card"><h3>Pending Payments</h3><h2 id="pendingPayments">0</h2></div>
+   <div class="card"><h3>Activated Users</h3><h2 id="activeUsers">0</h2></div>
+  </div>
+
+  <div class="card" style="overflow-x:auto">
+   <h3>Registered Users & Payment Verification</h3>
+   <table>
+    <thead>
+     <tr>
+      <th>Name</th><th>ID</th><th>Phone</th>
+      <th>Category</th><th>Payment Code</th>
+      <th>Status</th><th>Action</th>
+     </tr>
+    </thead>
+    <tbody id="usersTable"></tbody>
+   </table>
+  </div>
+  <button class="danger" onclick="logout()">LOG OUT</button>
+ </div>
+</section>
+
+<footer>
+ <h3>SHARP SCAN ONLINE TASKS</h3>
+ <p>Work Smart. Learn New Skills.</p>
+ <p>Contact: 0748559320</p>
+ <p class="small">© 2026 Sharp Scan Online Tasks. All rights reserved.</p>
+</footer>
+
+<script>
+const getUsers = () => JSON.parse(localStorage.getItem("sharpUsers") || "[]");
+const saveUsers = users =>
+ localStorage.setItem("sharpUsers", JSON.stringify(users));
+
+let currentUser = null;
+
+function showPage(page){
+ document.querySelectorAll("body > section").forEach(
+  s => s.classList.add("hidden")
+ );
+ document.getElementById(page).classList.remove("hidden");
+ window.scrollTo(0,0);
+}
+
+document.getElementById("registerForm").addEventListener("submit",e=>{
+ e.preventDefault();
+
+ const name=document.getElementById("regName").value.trim();
+ const id=document.getElementById("regId").value.trim();
+ const phone=document.getElementById("regPhone").value.trim();
+ const email=document.getElementById("regEmail").value.trim();
+ const password=document.getElementById("regPassword").value;
+ const confirm=document.getElementById("regConfirm").value;
+
+ if(password!==confirm){
+  alert("Passwords do not match!");
+  return;
+ }
+
+ let users=getUsers();
+ if(users.some(u=>u.id===id)){
+  alert("This ID number is already registered.");
+  return;
+ }
+
+ const user={
+  name,id,phone,email,password,
+  category:document.getElementById("regCategory").value,
+  paymentCode:"",
+  paymentStatus:"Not submitted",
+  status:"Pending"
+ };
+
+ users.push(user);
+ saveUsers(users);
+ currentUser=id;
+ alert("Account created successfully! Please follow the activation instructions.");
+ showPage("activation");
+});
+
+document.getElementById("paymentForm").addEventListener("submit",e=>{
+ e.preventDefault();
+ if(!currentUser){
+  alert("Please log in first.");
+  showPage("login");
+  return;
+ }
+ const code=document.getElementById("paymentCode").value.trim();
+ if(!code){return;}
+
+ let users=getUsers();
+ let user=users.find(u=>u.id===currentUser);
+ if(!user){alert("Account not found.");return;}
+
+ user.paymentCode=code;
+ user.paymentStatus="Awaiting manual verification";
+ saveUsers(users);
+
+ alert("Payment reference submitted. Your payment is not yet verified.");
+ showDashboard();
+});
+
+document.getElementById("loginForm").addEventListener("submit",e=>{
+ e.preventDefault();
+ const id=document.getElementById("loginId").value.trim();
+ const password=document.getElementById("loginPassword").value;
+ const user=getUsers().find(u=>u.id===id && u.password===password);
+
+ if(!user){
+  alert("Incorrect ID number or password.");
+  return;
+ }
+ currentUser=id;
+ showDashboard();
+});
+
+function showDashboard(){
+ let user=getUsers().find(u=>u.id===currentUser);
+ if(!user){showPage("login");return;}
+
+ document.getElementById("welcomeName").textContent=user.name;
+ document.getElementById("accountStatus").textContent=user.status;
+ document.getElementById("userCategory").textContent=user.category;
+ document.getElementById("userPayment").textContent=user.paymentStatus;
+
+ document.getElementById("taskMessage").textContent=
+ user.status==="Active"
+ ? "Your account has been activated. Check with the administrator for currently available assignments."
+ : "Your account is pending activation verification. Tasks are not yet unlocked.";
+
+ showPage("dashboard");
+}
+
+document.getElementById("adminForm").addEventListener("submit",e=>{
+ e.preventDefault();
+ const username=document.getElementById("adminUser").value;
+ const password=document.getElementById("adminPass").value;
+
+ if(username==="admin" && password==="SharpScan175!"){
+  loadAdmin();
+  showPage("adminDashboard");
+ }else{
+  alert("Invalid administrator credentials.");
+ }
+});
+
+function loadAdmin(){
+ const users=getUsers();
+ document.getElementById("totalUsers").textContent=users.length;
+ document.getElementById("pendingPayments").textContent=
+ users.filter(u=>u.paymentStatus==="Awaiting manual verification").length;
+ document.getElementById("activeUsers").textContent=
+ users.filter(u=>u.status==="Active").length;
+
+ const table=document.getElementById("usersTable");
+ table.innerHTML="";
+
+ users.forEach((u,index)=>{
+  let tr=document.createElement("tr");
+  const values=[
+   u.name,u.id,u.phone,u.category,u.paymentCode||"Not submitted",
+   u.paymentStatus
+  ];
+  values.forEach(value=>{
+   let td=document.createElement("td");
+   td.textContent=value;
+   tr.appendChild(td);
+  });
+
+  let action=document.createElement("td");
+  let approve=document.createElement("button");
+  approve.textContent="Verify & Activate";
+  approve.className="success";
+  approve.onclick=()=>activateUser(index);
+  action.appendChild(approve);
+  tr.appendChild(action);
+  table.appendChild(tr);
+ });
+}
+
+function activateUser(index){
+ let users=getUsers();
+ let user=users[index];
+ if(!user.paymentCode){
+  alert("No payment reference has been submitted.");
+  return;
+ }
+ if(!confirm("Have you independently confirmed receipt of KSh 175 for this user?"))return;
+
+ user.status="Active";
+ user.paymentStatus="Verified";
+ saveUsers(users);
+ loadAdmin();
+ alert("Account activated.");
+}
+
+function logout(){
+ currentUser=null;
+ showPage("home");
+}
+
+showPage("home");
+</script>
+</body>
+</html>
